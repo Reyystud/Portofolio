@@ -14,7 +14,6 @@ export function HeroSection() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Navbar animation
       gsap.fromTo(navRef.current, 
         { y: -20, opacity: 0 },
         { y: 0, opacity: 1, duration: 1, ease: "power3.out" }
@@ -45,7 +44,6 @@ export function HeroSection() {
     return () => ctx.revert()
   }, [])
 
-  // Animasi Dropdown saat isOpen berubah
   useEffect(() => {
     if (isOpen) {
       gsap.to(menuRef.current, {
@@ -70,7 +68,7 @@ export function HeroSection() {
     { icon: Github, href: "https://github.com/Reyystud", label: "GitHub" },
     { icon: Linkedin, href: "https://linkedin.com/in/rafiandhi", label: "LinkedIn" },
     { icon: Instagram, href: "https://www.instagram.com/rafiandhi_", label: "Instagram" },
-    { icon: Mail, href: "mailto:your@email.com", label: "Email" },
+    { icon: Mail, href: "mailto:mrafiandhis@gmail.com", label: "Email" },
   ]
 
   const navItems = [
@@ -176,12 +174,6 @@ export function HeroSection() {
             </div>
           </div>
         </div>
-      </div>
-
-      {/* EXPLORE INDICATOR */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50">
-        <div className="w-1.5 h-6 rounded-full bg-primary/50 animate-pulse" />
-        <span className="text-[10px] text-muted-foreground tracking-widest uppercase">Explore</span>
       </div>
     </section>
   )
