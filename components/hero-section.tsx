@@ -70,7 +70,7 @@ export function HeroSection() {
     { icon: Github, href: "https://github.com/Reyystud", label: "GitHub" },
     { icon: Linkedin, href: "https://linkedin.com/in/rafiandhi", label: "LinkedIn" },
     { icon: Instagram, href: "https://www.instagram.com/rafiandhi_", label: "Instagram" },
-    { icon: Mail, href: "mailto:your@email.com", label: "Email" },
+    { icon: Mail, href: "mailto:mrafiandhis@gmail.com", label: "Email" },
   ]
 
   const navItems = [
