@@ -92,12 +92,12 @@ export function CustomCursor() {
     <>
       <div
         ref={cursorRef}
-        className="fixed top-0 left-0 w-8 h-8 -ml-4 -mt-4 rounded-full border border-foreground pointer-events-none z-[9999] mix-blend-difference hidden md:block"
+        className="fixed top-0 left-0 w-8 h-8 -ml-4 -mt-4 rounded-full border border-foreground pointer-events-none z-9999 mix-blend-difference hidden md:block"
         style={{ transform: "translate(-100px, -100px)" }}
       />
       <div
         ref={cursorDotRef}
-        className="fixed top-0 left-0 w-2 h-2 -ml-1 -mt-1 rounded-full bg-primary pointer-events-none z-[9999] hidden md:block"
+        className="fixed top-0 left-0 w-2 h-2 -ml-1 -mt-1 rounded-full bg-primary pointer-events-none z-9999 hidden md:block"
         style={{ transform: "translate(-100px, -100px)" }}
       />
     </>

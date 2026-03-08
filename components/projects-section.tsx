@@ -108,7 +108,7 @@ export function ProjectsSection() {
       className="relative py-32 px-6 bg-background"
     >
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="flex items-end justify-between mb-16">
@@ -142,7 +142,7 @@ export function ProjectsSection() {
               onMouseLeave={() => setHoveredIndex(null)}
             >
               {/* Image placeholder with gradient */}
-              <div className="relative h-48 overflow-hidden bg-gradient-to-br from-primary/20 via-secondary to-background">
+              <div className="relative h-48 overflow-hidden bg-linear-to-br from-primary/20 via-secondary to-background">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(var(--primary),0.1),transparent_70%)]" />
                 
                 {/* Abstract decorative elements */}

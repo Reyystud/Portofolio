@@ -121,7 +121,7 @@ export function AboutSection() {
       className="relative py-32 px-6 bg-background"
     >
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="mb-16">
@@ -150,7 +150,7 @@ export function AboutSection() {
               className="skill-card relative group p-8 rounded-2xl border border-border bg-card/50 backdrop-blur-sm overflow-hidden cursor-pointer"
             >
               {/* Glow effect */}
-              <div className="card-glow absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-transparent opacity-0 transition-opacity" />
+              <div className="card-glow absolute inset-0 bg-linear-to-br from-primary/20 via-transparent to-transparent opacity-0 transition-opacity" />
 
               <div className="relative z-10">
                 <div className="flex items-center gap-4 mb-4">

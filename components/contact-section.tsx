@@ -248,7 +248,7 @@ export function ContactSection() {
             </div>
 
             {/* Decorative quote */}
-            <div className="p-6 rounded-2xl bg-gradient-to-br from-primary/10 via-card to-card border border-primary/20">
+            <div className="p-6 rounded-2xl bg-linear-to-br from-primary/10 via-card to-card border border-primary/20">
               <p className="text-lg italic text-foreground/80 mb-2">
                 &quot;The best way to predict the future is to create it.&quot;
               </p>

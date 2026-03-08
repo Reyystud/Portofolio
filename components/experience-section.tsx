@@ -137,7 +137,7 @@ export function ExperienceSection() {
 
         <div ref={itemsRef} className="relative">
           {/* Timeline line */}
-          <div className="timeline-line absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-primary via-primary/50 to-transparent origin-top hidden md:block" />
+          <div className="timeline-line absolute left-0 top-0 bottom-0 w-px bg-linear-to-b from-primary via-primary/50 to-transparent origin-top hidden md:block" />
 
           {experiences.map((exp, index) => (
             <div key={index} className="group relative pl-0 md:pl-8 pb-12 last:pb-0">
@@ -146,7 +146,7 @@ export function ExperienceSection() {
                 <div className="w-2 h-2 -ml-[4.5px] rounded-full bg-primary shadow-[0_0_15px_rgba(var(--primary),0.5)]" />
               </div>
 
-              <div className="grid md:grid-cols-[160px_1fr] gap-8 md:gap-12 p-8 rounded-[2rem] hover:bg-card/50 transition-all duration-500 border border-transparent hover:border-border/50">
+              <div className="grid md:grid-cols-[160px_1fr] gap-8 md:gap-12 p-8 rounded-4xl hover:bg-card/50 transition-all duration-500 border border-transparent hover:border-border/50">
                 
                 <div className="flex flex-col items-start justify-start pt-1">
                   <div className="relative aspect-square w-full max-w-[140px] rounded-2xl bg-muted/20 border border-border overflow-hidden flex items-center justify-center p-4 group-hover:border-primary/40 group-hover:bg-muted/40 transition-all duration-500 shadow-sm group-hover:shadow-xl group-hover:shadow-primary/5">

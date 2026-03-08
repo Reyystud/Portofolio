@@ -77,7 +77,7 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
   return (
     <div
       ref={containerRef}
-      className="fixed inset-0 z-[9999] bg-background flex flex-col items-center justify-center overflow-hidden"
+      className="fixed inset-0 z-9999 bg-background flex flex-col items-center justify-center overflow-hidden"
       style={{ clipPath: "circle(150% at 50% 50%)" }} // Initial state for clipPath
     >
       {/* Background Decor */}
@@ -103,7 +103,7 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
         </div>
         
         <div className="sub-text space-y-2">
-          <p className="text-primary font-mono text-lg font-bold">
+          <p className="text-primary font-sans text-lg font-bold">
             {progress}%
           </p>
           <p className="text-muted-foreground text-[10px] tracking-[0.5em] uppercase animate-pulse">
