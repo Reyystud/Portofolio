@@ -47,7 +47,7 @@ export function Footer() {
               className="text-2xl font-bold text-primary"
               style={{ fontFamily: "var(--font-space-grotesk)" }}
             >
-              REYY
+              R.
             </span>
             <span className="text-muted-foreground">|</span>
             <span className="text-sm text-muted-foreground">
