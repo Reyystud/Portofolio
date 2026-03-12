@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { Send, Mail, MapPin, Github, Linkedin, Instagram } from "lucide-react"
+import emailjs from "@emailjs/browser"
+import { toast } from "sonner"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -71,17 +73,33 @@ export function ContactSection() {
     return () => ctx.revert()
   }, [])
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    if (!formRef.current) return;
+
     setIsSubmitting(true)
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    try {
+      // TODO: Replace these with your actual EmailJS credentials
+      const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "YOUR_SERVICE_ID";
+      const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "YOUR_TEMPLATE_ID";
+      const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "YOUR_PUBLIC_KEY";
 
-    setIsSubmitting(false)
-    // Reset form
-    const form = e.target as HTMLFormElement
-    form.reset()
+      await emailjs.sendForm(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        formRef.current,
+        PUBLIC_KEY
+      );
+
+      toast.success("Message sent successfully!");
+      formRef.current.reset();
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      toast.error("Failed to send message. Please try again.");
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const contactInfo = [
@@ -141,6 +159,7 @@ export function ContactSection() {
                 <input
                   type="text"
                   id="firstName"
+                  name="firstName"
                   required
                   className="w-full px-4 py-3 rounded-xl bg-secondary border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-foreground placeholder:text-muted-foreground"
                   placeholder="John"
@@ -153,6 +172,7 @@ export function ContactSection() {
                 <input
                   type="text"
                   id="lastName"
+                  name="lastName"
                   required
                   className="w-full px-4 py-3 rounded-xl bg-secondary border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-foreground placeholder:text-muted-foreground"
                   placeholder="Doe"
@@ -167,6 +187,7 @@ export function ContactSection() {
               <input
                 type="email"
                 id="email"
+                name="user_email"
                 required
                 className="w-full px-4 py-3 rounded-xl bg-secondary border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-foreground placeholder:text-muted-foreground"
                 placeholder="john@example.com"
@@ -179,6 +200,7 @@ export function ContactSection() {
               </label>
               <textarea
                 id="message"
+                name="message"
                 required
                 rows={5}
                 className="w-full px-4 py-3 rounded-xl bg-secondary border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none text-foreground placeholder:text-muted-foreground"
