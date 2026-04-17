@@ -32,6 +32,12 @@ const skills = [
     description: "Exploring new technologies and building creative projects",
     techs: ["Machine Learning", "Cloud Computing", "DevOps"],
   },
+    {
+    icon: Code2,
+    title: "Development",
+    description: "Building scalable applications with modern technologies",
+    techs: ["React", "Next.js", "TypeScript", "Python"],
+  },
 ]
 
 export function AboutSection() {
