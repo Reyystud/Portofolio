@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 import gsap from "gsap"
 import { Github, Linkedin, Mail, Instagram, Menu, X } from "lucide-react"
+import Link from "next/link"
 
 export function HeroSection() {
   const [isOpen, setIsOpen] = useState(false)
@@ -72,9 +73,9 @@ export function HeroSection() {
   ]
 
   const navItems = [
-    { label: "ABOUT", href: "#about" },
-    { label: "EXPERIENCE", href: "#experience" },
-    { label: "PROJECTS", href: "#projects" },
+    { label: "ABOUT", href: "/about" },
+    { label: "EXPERIENCE", href: "/experience" },
+    { label: "PROJECTS", href: "/projects" },
     { label: "CONTACT", href: "#contact" },
   ]
 
@@ -155,12 +156,20 @@ export function HeroSection() {
             that blend thoughtful design with robust engineering.
           </p>
 
-          <div className="social-links flex items-center justify-center lg:justify-start gap-4">
-            {socialLinks.map((social) => (
-              <a key={social.label} href={social.href} className="group p-3 rounded-full border border-border hover:border-primary hover:bg-primary/10 transition-all duration-300">
-                <social.icon className="w-5 h-5 text-muted-foreground group-hover:text-primary" />
-              </a>
-            ))}
+          <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+            <div className="social-links flex items-center justify-center gap-4">
+              {socialLinks.map((social) => (
+                <a key={social.label} href={social.href} className="group p-3 rounded-full border border-border hover:border-primary hover:bg-primary/10 transition-all duration-300">
+                  <social.icon className="w-5 h-5 text-muted-foreground group-hover:text-primary" />
+                </a>
+              ))}
+            </div>
+            <Link 
+              href="/projects" 
+              className="px-6 py-3 rounded-lg bg-primary/10 hover:bg-primary/20 border border-primary/30 hover:border-primary text-primary transition-all duration-300 font-medium"
+            >
+              View My Work
+            </Link>
           </div>
         </div>
 

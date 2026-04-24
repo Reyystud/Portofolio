@@ -3,7 +3,8 @@
 import { useEffect, useRef } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { Code2, Palette, Lightbulb, Rocket } from "lucide-react"
+import { Code2, Palette, Lightbulb, Rocket, ArrowUpRight } from "lucide-react"
+import Link from "next/link"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -131,19 +132,30 @@ export function AboutSection() {
 
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="mb-16">
-          <h2
-            ref={headingRef}
-            className="text-4xl md:text-5xl font-bold mb-6"
-            style={{ fontFamily: "var(--font-space-grotesk)" }}
-          >
-            About <span className="text-primary">Me</span>
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-3xl leading-relaxed">
-            As a Computer Science student at Institut Teknologi Bandung, I combine 
-            academic knowledge with practical experience to build meaningful digital 
-            solutions. I believe in continuous learning and pushing the boundaries 
-            of what&apos;s possible with technology.
-          </p>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+            <div>
+              <h2
+                ref={headingRef}
+                className="text-4xl md:text-5xl font-bold mb-6"
+                style={{ fontFamily: "var(--font-space-grotesk)" }}
+              >
+                About <span className="text-primary">Me</span>
+              </h2>
+              <p className="text-muted-foreground text-lg max-w-3xl leading-relaxed">
+                As a Computer Science student at Institut Teknologi Bandung, I combine 
+                academic knowledge with practical experience to build meaningful digital 
+                solutions. I believe in continuous learning and pushing the boundaries 
+                of what&apos;s possible with technology.
+              </p>
+            </div>
+            <Link
+              href="/about"
+              className="group hidden md:inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary/10 hover:bg-primary/20 border border-primary/30 hover:border-primary text-primary transition-all duration-300 whitespace-nowrap"
+            >
+              Learn More
+              <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </Link>
+          </div>
         </div>
 
         <div

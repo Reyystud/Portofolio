@@ -120,7 +120,7 @@ export function ProjectsSection() {
             Featured <span className="text-primary">Projects</span>
           </h2>
           <a
-            href="#"
+            href="/projects"
             className="group hidden md:flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
           >
             View all projects
@@ -203,7 +203,7 @@ export function ProjectsSection() {
         </div>
 
         <a
-          href="#"
+          href="/projects"
           className="group flex md:hidden items-center justify-center gap-2 mt-8 text-muted-foreground hover:text-primary transition-colors"
         >
           View all projects
